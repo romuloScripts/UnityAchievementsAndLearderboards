@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
+namespace Achievement{
 [CreateAssetMenu(fileName = "Add", menuName = "Shieldnator/UpdateStatAdd", order = 0)]
 public class UpdateStatAdd : UpdateStatBase {
 	
@@ -10,5 +11,6 @@ public class UpdateStatAdd : UpdateStatBase {
 		data += n;
 		action.Invoke();
 	}
+}
 }
 

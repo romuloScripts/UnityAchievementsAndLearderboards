@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+namespace Achievement{
 [CreateAssetMenu(fileName = "Achievement", menuName = "Shieldnator/Achievement", order = 0)]
 public class Achievement : AchievementBase {
 
@@ -45,5 +46,5 @@ public class Achievement : AchievementBase {
        conditions[0].maxValue = int.Parse(name);
     }
 
-
+}
 }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
+namespace Achievement{
 [CreateAssetMenu(fileName = "AchievementStat", menuName = "Shieldnator/AchievementStat", order = 0)]
 public class AchievementStat : ScriptableObject {
 	
@@ -40,4 +41,5 @@ public class AchievementStat : ScriptableObject {
 			}
 		}
 	}
+}
 }

@@ -1,6 +1,7 @@
 
 using UnityEngine;
 
+namespace Achievement{
 [CreateAssetMenu(fileName = "SaveStatsAndAchievements", menuName = "Shieldnator/SaveStatsAndAchievements", order = 0)]
 public class SaveStatsAndAchievements : ScriptableObject {
     
@@ -20,4 +21,5 @@ public class SaveStatsAndAchievements : ScriptableObject {
             item.ResetData();
         }
     }
+}
 }

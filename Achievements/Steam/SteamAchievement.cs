@@ -1,6 +1,7 @@
 
 using UnityEngine;
 
+namespace Achievement{
 [CreateAssetMenu(fileName = "SteamAchievement", menuName = "Shieldnator/SteamAchievement", order = 0)]
 public class SteamAchievement : Achievement {
 
@@ -14,4 +15,5 @@ public class SteamAchievement : Achievement {
         SteamStatsAndAchievements.UnlockAchievement(this);
         #endif
     }
+}
 }

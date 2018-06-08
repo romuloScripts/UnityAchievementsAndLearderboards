@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
+namespace Achievement{
 [CreateAssetMenu(fileName = "Max", menuName = "Shieldnator/UpdateStatMax", order = 0)]
 public class UpdateStatMax : UpdateStatBase {
 	
@@ -12,4 +13,5 @@ public class UpdateStatMax : UpdateStatBase {
 		}
 		action.Invoke();
 	}
+}
 }

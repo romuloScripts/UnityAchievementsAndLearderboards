@@ -6,6 +6,7 @@ using System.ComponentModel;
 using Steamworks;
 #endif
 
+namespace Achievement{
 public class SteamStatsAndAchievements : MonoBehaviour {
 	public SaveStatsAndAchievements statsAndAchievements;
 #if STEAM
@@ -30,16 +31,9 @@ public class SteamStatsAndAchievements : MonoBehaviour {
 			Destroy(this);
 			return;
 		}
-		//SceneManager.sceneLoaded += DebugStats;
 		singleton = this;
 		DontDestroyOnLoad(gameObject);
 	}
-
-	/* void DebugStats(Scene scene, LoadSceneMode mode){
-		foreach (var item in stats){
-			Debug.Log(item.name + " " + item.data);
-		}
-	} */
 
 	void OnEnable() {
 
@@ -192,4 +186,5 @@ public class SteamStatsAndAchievements : MonoBehaviour {
 		#endif
 		return false;
 	}
+}
 }
