@@ -2,25 +2,23 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-#if STEAM
+//#if STEAM
 using Steamworks;
-#endif
+//#endif
 
 [CreateAssetMenu(fileName = "SteamLeaderboard", menuName = "Shieldnator/SteamLeaderboard", order = 0)]
 public class SteamLeaderboard : Leaderboard {
 
-	#if STEAM
 	public ELeaderboardDataRequest requestType;
 	public ELeaderboardUploadScoreMethod uploadMethod = ELeaderboardUploadScoreMethod.k_ELeaderboardUploadScoreMethodKeepBest;
-	#endif
 	public int  maxEntries=30, uploadScore;
 	[Tooltip("Use manual entries instead of download")]
 	public bool test;
 	public bool releaseMemory=true;
 
+	#if STEAM
 	private int type;
 
-	#if STEAM
 	[NonSerialized]
 	private SteamLeaderboard_t leaderboard_T;
 
