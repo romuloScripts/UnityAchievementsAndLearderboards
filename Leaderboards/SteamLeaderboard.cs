@@ -2,15 +2,28 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-//#if STEAM
+#if STEAM
 using Steamworks;
-//#endif
+#endif
 
 [CreateAssetMenu(fileName = "SteamLeaderboard", menuName = "Shieldnator/SteamLeaderboard", order = 0)]
 public class SteamLeaderboard : Leaderboard {
 
-	public ELeaderboardDataRequest requestType;
-	public ELeaderboardUploadScoreMethod uploadMethod = ELeaderboardUploadScoreMethod.k_ELeaderboardUploadScoreMethodKeepBest;
+	public enum RequestType{
+		Friends,
+		Global,
+		GlobalAroundUser,
+		Users
+	}
+
+	public enum UploadScoreMethod{
+		ForceUpdate,
+		KeepBest,
+		None
+	}
+
+	public RequestType requestType;
+	public UploadScoreMethod uploadMethod = UploadScoreMethod.KeepBest;
 	public int  maxEntries=30, uploadScore;
 	[Tooltip("Use manual entries instead of download")]
 	public bool test;
@@ -56,7 +69,7 @@ public class SteamLeaderboard : Leaderboard {
 		if(leaderboard_T == new SteamLeaderboard_t(0))
 			return;
 		SteamAPICall_t steamAPICall = SteamUserStats.UploadLeaderboardScore(
-			leaderboard_T,uploadMethod,uploadScore,null,0);
+			leaderboard_T,(ELeaderboardUploadScoreMethod)uploadMethod,uploadScore,null,0);
 		OnLeaderboardScoreUploadedCallResult.Set(steamAPICall,UploadResult);
 	} 
 
@@ -69,18 +82,13 @@ public class SteamLeaderboard : Leaderboard {
 	}
 
 	public override void Download(int type){
-		if(type ==0){
-			type = 2;
-		}else{
-			type = 0;	
-		}
 		if(test){
 			onDownloaded.Invoke(entries);
 			return;
 		}
 		if (!IsSteam())
 			return;
-		this.type = type;
+		requestType = (RequestType)type;
 		if(leaderboard_T == new SteamLeaderboard_t(0)){
 			Find(OnDownload);
 		}else{
@@ -105,7 +113,7 @@ public class SteamLeaderboard : Leaderboard {
 	private void OnDownload(){
 	 	if(leaderboard_T == new SteamLeaderboard_t(0))
 			return;
-		SteamAPICall_t steamAPICall = SteamUserStats.DownloadLeaderboardEntries(leaderboard_T, (ELeaderboardDataRequest)type, 1, 30);
+		SteamAPICall_t steamAPICall = SteamUserStats.DownloadLeaderboardEntries(leaderboard_T, (ELeaderboardDataRequest)requestType, 1, 30);
 		OnLeaderboardScoresDownloadedCallResult.Set(steamAPICall,DownloadResult);
 	}
 
