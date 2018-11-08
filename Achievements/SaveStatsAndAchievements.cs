@@ -2,7 +2,7 @@
 using UnityEngine;
 
 namespace Achievement{
-[CreateAssetMenu(fileName = "SaveStatsAndAchievements", menuName = "Shieldnator/SaveStatsAndAchievements", order = 0)]
+[CreateAssetMenu(fileName = "SaveStatsAndAchievements", menuName = "Social Stats/SaveStatsAndAchievements", order = 0)]
 public class SaveStatsAndAchievements : ScriptableObject {
     
     public AchievementStat[] stats;

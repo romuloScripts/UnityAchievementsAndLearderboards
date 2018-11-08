@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 namespace Achievement{
-[CreateAssetMenu(fileName = "Achievement", menuName = "Shieldnator/Achievement", order = 0)]
+[CreateAssetMenu(fileName = "Achievement", menuName = "Social Stats/Achievement", order = 0)]
 public class Achievement : AchievementBase {
 
     public string apiName;

@@ -6,7 +6,7 @@ using UnityEngine;
 using Steamworks;
 #endif
 
-[CreateAssetMenu(fileName = "SteamLeaderboard", menuName = "Shieldnator/SteamLeaderboard", order = 0)]
+[CreateAssetMenu(fileName = "SteamLeaderboard", menuName = "Social Stats/SteamLeaderboard", order = 0)]
 public class SteamLeaderboard : Leaderboard {
 
 	public enum RequestType{

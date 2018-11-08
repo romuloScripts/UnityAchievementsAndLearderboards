@@ -2,7 +2,7 @@
 using UnityEngine;
 
 namespace Achievement{
-[CreateAssetMenu(fileName = "SteamAchievement", menuName = "Shieldnator/SteamAchievement", order = 0)]
+[CreateAssetMenu(fileName = "SteamAchievement", menuName = "Social Stats/SteamAchievement", order = 0)]
 public class SteamAchievement : Achievement {
 
     static int totalUnloked; 

@@ -4,7 +4,7 @@ using UnityEngine;
 using System;
 
 namespace Achievement{
-[CreateAssetMenu(fileName = "Max", menuName = "Shieldnator/UpdateStatMax", order = 0)]
+[CreateAssetMenu(fileName = "Max", menuName = "Social Stats/UpdateStatMax", order = 0)]
 public class UpdateStatMax : UpdateStatBase {
 	
 	public override void SetStat(ref int data, Action action, int n=1){

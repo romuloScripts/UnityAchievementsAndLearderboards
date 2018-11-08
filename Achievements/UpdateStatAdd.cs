@@ -4,7 +4,7 @@ using UnityEngine;
 using System;
 
 namespace Achievement{
-[CreateAssetMenu(fileName = "Add", menuName = "Shieldnator/UpdateStatAdd", order = 0)]
+[CreateAssetMenu(fileName = "Add", menuName = "Social Stats/UpdateStatAdd", order = 0)]
 public class UpdateStatAdd : UpdateStatBase {
 	
 	public override void SetStat(ref int data, Action action, int n=1){

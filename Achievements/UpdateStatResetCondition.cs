@@ -5,7 +5,7 @@ using UnityEngine.Events;
 using System;
 
 namespace Achievement{
-[CreateAssetMenu(fileName = "ResetCondition", menuName = "Shieldnator/UpdateStatResetCondition", order = 0)]
+[CreateAssetMenu(fileName = "ResetCondition", menuName = "Social Stats/UpdateStatResetCondition", order = 0)]
 public class UpdateStatResetCondition : UpdateStatBase {
 	
 	public UpdateStatBase updateStat;
