@@ -10,7 +10,7 @@ public class SteamAchievement : Achievement {
     protected override void Unlock(){
         Debug.Log(apiName+"Unlocked");
         totalUnloked++;
-        Debug.Log(totalUnloked);
+        Debug.Log(totalUnloked.ToString());
         #if STEAM
         SteamStatsAndAchievements.UnlockAchievement(this);
         #endif
